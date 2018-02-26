@@ -1,0 +1,41 @@
+<idea-plugin>
+  <id>com.teligen.svnshing.plugins</id>
+  <name>EXPORT_SOURCE_FILES</name>
+  <version>1.0</version>
+  <vendor email="113402255@qq.com" url="svnshing">com.intellij</vendor>
+
+  <description><![CDATA[
+      export source code files<br>
+      <em>author by svnshing</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="145.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <action id="ExportSource.ExportSourceAction" class="ExportSourceAction" text="exportSource Svnshing"
+            description="导出源文件及其目录结构">
+      <add-to-group group-id="Git.Log.ContextMenu" anchor="last"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="shift ESCAPE"/>
+    </action>
+  </actions>
+  <application-components>
+    <component>
+      <implementation-class>ExportSourceComponent</implementation-class>
+    </component>
+  </application-components>
+</idea-plugin>
